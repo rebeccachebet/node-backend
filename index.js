@@ -1,11 +1,11 @@
-//creating hello wordld web app
+// //creating hello wordld web app
 
 console.log('hello world')
-//express diplays content on the web browser, we use keyword 'require' to get packages(express) that we require to use.
+// //express diplays content on the web browser, we use keyword 'require' to get packages(express) that we require to use.
 const express= require('express');
-//calling the app using express to display on the web browser
+// //calling the app using express to display on the web browser
 const app=express();
-//listen method provided by express creates a server where browsers can connect/listen,with two arguments.
+// //listen method provided by express creates a server where browsers can connect/listen,with two arguments.
 app.listen(3000,function(){
     console.log('listening on 3000')
 })
@@ -13,11 +13,23 @@ app.listen(3000,function(){
 //browsers send a get request to the server to perform a read operation
 //the reason we see the cannot get error is beause we havent sent anything back to he browser from our server
 
-//get method for handling requests using express
+//get method for handling requests using express to display
 //app.get(path,callback)
 //the first argument is the path of the get request.its anything that comes after your domain name.the pathargument is */*
-//the second argument is the call back function that tells the server when the path is matvhed.it takes two arguments;a request object and a response object
+//the second argument is the call back function that tells the server when the path is matched.it takes two arguments;a request object and a response object
 app.get('/',function(req,res){
     res.send('Hello World')
 }
 )
+//Writing in ES6 Code
+app.get('/',(req,res)=>{
+    res.send('Hello World')
+}
+)
+
+app.get('/About',(req,res)=>{
+    res.send(' This is the About Us Page')
+}
+)
+
+
